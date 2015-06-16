@@ -11,7 +11,7 @@
 // This program requires the ArduCAM V3.0.0 (or above) library and Rev.C ArduCAM shield
 // and use Arduino IDE 1.5.2 compiler
 
-#include <ArduCAM.h>
+#include "ArduCAM.h"
 #include "memorysaver.h"
 #include <UTFT_SPI.h>
 #include <Wire.h>
@@ -29,7 +29,7 @@ void setup()
     Wire.begin(); 
   #endif
   #if defined(__arm__)
-    Wire1.begin(); 
+    Wire1.begin();
   #endif
   Serial.begin(115200);
   Serial.println("hello"); 
