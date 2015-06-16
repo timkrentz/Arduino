@@ -10,6 +10,7 @@
 //#define OV3640_CAM
 //#define OV5642_CAM
 #define MT9D111_CAM
+#define MT9D111_A
 
 
 #if defined OV7660_CAM	
@@ -41,6 +42,10 @@
 #endif
 
 #if defined MT9D111_CAM	
+	#include "mt9d111_regs.h"
+#endif
+
+#if defined MT9D111_A
 	#include "mt9d111_regs.h"
 #endif
 
