@@ -30,13 +30,14 @@ def read(num=1):
 
 
 
-#Testbench code, runs top-level
+#Testbench code, runs if top-level
 if __name__ == "__main__":
 	
 	#Create accelerometer object
 	accel =	create('/dev/ttyACM0', 115200)
 
-	print(accel.read())
+	#Read 50 bytes from serial stream
+	print(accel.read(50))
 	print('Running...')
 
 
