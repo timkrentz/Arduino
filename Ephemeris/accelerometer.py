@@ -15,13 +15,15 @@ def create(port='/dev/ttyACM0', baudrate=115200):
 #Read 'num' bytes from accelerometer object, defaults to 1 if not specified
 #self.readline should read until \n character, but it only reads one byte
 #fix this...
-def read(num=1):
-	data = []
-	while (num >0):
-		data.append(self.readline())
-		num -= 1
+def getVector():
+	data = []			#Blank array
+	while True:
+		temp_char = self.read()
+		if (temp_char == '\n'):
+			print('Breaking...')
+			break
+		data.append(temp_char)
 	return data
-
 
 
 
@@ -37,7 +39,6 @@ if __name__ == "__main__":
 	accel =	create('/dev/ttyACM0', 115200)
 
 	#Read 50 bytes from serial stream
-	print(accel.read(50))
 	print('Running...')
-
+	print('%s' % accel.getVector())
 
