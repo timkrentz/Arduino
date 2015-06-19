@@ -5,14 +5,16 @@
 import serial
 
 
-
 #Accelerometer creation function, creates and returns serial object
 #Required: port name and buadrate
-#assumes 8 bits, no parity, 1 stop bit
-#Further dev: Allow creation without params (use defaults)
+#Assumes 8 bits, no parity, 1 stop bit
 def create(port='/dev/ttyACM0', baudrate=115200):
 	return serial.Serial(port, baudrate)
 
+
+#Read 'num' bytes from accelerometer object, defaults to 1 if not specified
+#self.readline should read until \n character, but it only reads one byte
+#fix this...
 def read(num=1):
 	data = []
 	while (num >0):
