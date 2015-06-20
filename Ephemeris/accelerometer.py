@@ -5,25 +5,25 @@
 import serial
 
 
-#Accelerometer creation function, creates and returns serial object
-#Required: port name and buadrate
-#Assumes 8 bits, no parity, 1 stop bit
-def create(port='/dev/ttyACM0', baudrate=115200):
-	return serial.Serial(port, baudrate)
+	#Accelerometer creation function, creates and returns serial object
+	#Required: port name and buadrate
+	#Assumes 8 bits, no parity, 1 stop bit
+	def create(port='/dev/ttyACM0', baudrate=115200):
+		return serial.Serial(port, baudrate)
 
 
-#Read 'num' bytes from accelerometer object, defaults to 1 if not specified
-#self.readline should read until \n character, but it only reads one byte
-#fix this...
-def getVector():
-	data = []			#Blank array
-	while True:
-		temp_char = self.read()
-		if (temp_char == '\n'):
-			print('Breaking...')
-			break
-		data.append(temp_char)
-	return data
+	#Read 'num' bytes from accelerometer object, defaults to 1 if not specified
+	#self.readline should read until \n character, but it only reads one byte
+	#fix this...
+	def getVector():
+		data = []			#Blank array
+		while True:
+			temp_char = self.read()
+			if (temp_char == '\n'):
+				print('Breaking...')
+				break
+			data.append(temp_char)
+		return data
 
 
 
