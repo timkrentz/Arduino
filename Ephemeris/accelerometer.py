@@ -33,7 +33,7 @@ class accelerometer:
 		while timeOut > 0:
 			timeOut -= 1
 
-			#Read string from Serial
+			#Read string from serial
 			self.stringIn = self.ser.readline()
 	
 			#Split string by spaces into x, y, and z components
@@ -45,6 +45,7 @@ class accelerometer:
 				continue
 
 			#Attempt to convert each of the three sub-strings into integers
+			#Important because sometimes serial returns sub-strings like '-4-56'
 			try:
 				self.dataOut = map(int, self.dataOut)
 				break
