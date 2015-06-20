@@ -60,7 +60,8 @@ class accelerometer:
 		#This bit prints to console if no good string was read
 		if timeOut <= 0:
 			print('ERROR: TIMEOUT')
-			return [0,0,0]
+			return [0,0,0]			#This could be improved with actual
+							#error handeling
 		else:
 			return self.dataOut
 		
@@ -73,8 +74,7 @@ if __name__ == "__main__":
 	#Create accelerometer object
 	accel =	accelerometer()
 
-	#Read bytes from serial stream
-	print('Running...')
+	#Read a force vector from accelerometer
 	ints = accel.getVector()
-	print(ints)
-	
+	print('Current force vector: ',ints)
+
