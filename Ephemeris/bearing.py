@@ -1,5 +1,5 @@
 # Package for getting the current location of the sun
-# Requires PyEphem (ephem) and datetime (datetime) libraries
+# Requires tPyEphem (ephem) and datetime (datetime) libraries
 # Author: Tim Krentz
 # June 22, 2015
 

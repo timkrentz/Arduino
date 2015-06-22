@@ -3,6 +3,7 @@
 # Created Friday, June 16, 2015
 
 import serial
+import math
 
 class accelerometer:
 	"""A class for the H48C accelerometer + Arduino"""
@@ -63,7 +64,11 @@ class accelerometer:
 			return [0,0,0]			#This could be improved with actual
 							#error handeling
 		else:
-			return self.dataOut
+			phi = math.degrees(math.atan2(self.dataOut[2],math.hypot(self.dataOut[0],self.dataOut[1])))
+			theta = math.degrees(math.atan2(self.dataOut[1],self.dataOut[0]))
+			return [theta,phi]
+			
+ 
 		
 ###############################################################################################
 
@@ -75,6 +80,6 @@ if __name__ == "__main__":
 	accel =	accelerometer()
 
 	#Read a force vector from accelerometer
-	ints = accel.getVector()
-	print('Current force vector: ',ints)
+	angs = accel.getVector()
+	print('Current force vector: ',angs)
 
