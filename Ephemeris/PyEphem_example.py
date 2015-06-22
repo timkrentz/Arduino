@@ -6,13 +6,16 @@
 
 
 import ephem
+import datetime
+
+t = datetime.datetime.utcnow()
 
 
 cmu = ephem.Observer()
-cmu.lat = 40.2634501
-cmu.lon = -79.5642191
-cmu.elevation = 289
-cmu.date = '2015/6/19 18:51:00'
+cmu.lat = 40.442947
+cmu.lon = -79.945108
+cmu.elevation = 269
+cmu.date = t 
 
 
 S = ephem.Sun(cmu)

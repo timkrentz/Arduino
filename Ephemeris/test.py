@@ -1,24 +1,8 @@
-#Experimental Code for learning to use the PyEphem library
-#PyEphem is used for ephemeris calculations
-#The goal is to use this in designing the Sun Sensor
+# Tim Krentz
 
-import ephem
+import bearing
 
-#U = ephem.Uranus()
-#print('%s' % (U.name))
+angles = bearing.getBearing()
 
-cmu = ephem.Observer()
-cmu.lat = 40.2634501
-cmu.lon = -79.5642191
-cmu.elevation = 289
-cmu.date = '2015/6/19 18:51:00'
-
-S = ephem.Sun(cmu)
-print('%s %s' % (S.az, S.alt))
-
-
-
-
-
-
+print('Sun is currently %s degrees from North and %s degrees above horizon.' % (angles[0],angles[1]))
 
