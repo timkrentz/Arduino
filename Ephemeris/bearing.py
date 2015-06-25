@@ -28,7 +28,7 @@ def getBearing(latitude=40.442947, longitude=-79.945108, elevation=269):
 	b = ephem.Sun(curr)
 
 	# Return the azimuth from North and the altitude above horizon to the Sun
-	return [b.az, b.alt]
+	return [b.a, b.alt]
 
 
 ####################################################################################################
@@ -39,4 +39,4 @@ if __name__ == "__main__":
 	
 	# Get the current angles to sun from asphalt outside PRL highbay, and print them out
 	temp = getBearing()
-	print('The Sun is currently %s degrees from North and %s degrees above the horizon.' % (temp[0],temp[1]))
+	print('The Sun is currently %s degrees from North and %s degrees above the horizon.' % (temp[0],temp[1])t)
