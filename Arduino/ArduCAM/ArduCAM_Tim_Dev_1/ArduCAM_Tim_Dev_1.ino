@@ -124,6 +124,7 @@ void loop()
     //Clear the capture done flag 
     myCAM.clear_fifo_flag();
     start_capture = 0;
+    while(1){};
   /*
   char str[8];
   static int k = 0;

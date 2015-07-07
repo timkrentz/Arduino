@@ -1,0 +1,1314 @@
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec622139941/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec622139941.dir/build.make CMakeFiles/cmTryCompileExec622139941.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec622139941.dir/TestEndianess.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec622139941.dir/TestEndianess.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTryCompileExec622139941
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec622139941.dir/link.txt --verbose=1
+/usr/bin/cc        CMakeFiles/cmTryCompileExec622139941.dir/TestEndianess.c.o  -o cmTryCompileExec622139941 -rdynamic 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1279118735/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1279118735.dir/build.make CMakeFiles/cmTryCompileExec1279118735.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1279118735.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec1279118735.dir/CheckSymbolExists.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec1279118735
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1279118735.dir/link.txt --verbose=1
+/usr/bin/cc        CMakeFiles/cmTryCompileExec1279118735.dir/CheckSymbolExists.c.o  -o cmTryCompileExec1279118735 -rdynamic 
+CMakeFiles/cmTryCompileExec1279118735.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec1279118735] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1279118735/fast] Error 2
+
+File /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2289378650/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2289378650.dir/build.make CMakeFiles/cmTryCompileExec2289378650.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2289378650.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2289378650.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2289378650
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2289378650.dir/link.txt --verbose=1
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2289378650.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2289378650 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec2289378650] Error 1
+make: *** [cmTryCompileExec2289378650/fast] Error 2
+
+
+Determining size of __int64 failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2081974184/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2081974184.dir/build.make CMakeFiles/cmTryCompileExec2081974184.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2081974184.dir/VTK_SIZEOF___INT64.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec2081974184.dir/VTK_SIZEOF___INT64.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/VTK_SIZEOF___INT64.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/VTK_SIZEOF___INT64.c:17:22: error: ‘__int64’ undeclared here (not in a function)
+ #define SIZE (sizeof(__int64))
+                      ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/VTK_SIZEOF___INT64.c:19:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^
+make[1]: *** [CMakeFiles/cmTryCompileExec2081974184.dir/VTK_SIZEOF___INT64.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2081974184/fast] Error 2
+
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/VTK_SIZEOF___INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(__int64))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the function getsockname exists in the socket failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3151124673/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3151124673.dir/build.make CMakeFiles/cmTryCompileExec3151124673.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3151124673.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=getsockname   -o CMakeFiles/cmTryCompileExec3151124673.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3151124673
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3151124673.dir/link.txt --verbose=1
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=getsockname    CMakeFiles/cmTryCompileExec3151124673.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3151124673 -rdynamic -lsocket 
+/usr/bin/ld: cannot find -lsocket
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3151124673] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3151124673/fast] Error 2
+
+
+Checking for non-standard argument to stl allocator<>::max_size failed to compile with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1838785402/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1838785402.dir/build.make CMakeFiles/cmTryCompileExec1838785402.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1838785402.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/c++   -DKWSYS_STL_HAVE_STD=1 -DTEST_KWSYS_STL_HAS_ALLOCATOR_MAX_SIZE_ARGUMENT  -o CMakeFiles/cmTryCompileExec1838785402.dir/kwsysPlatformTestsCXX.cxx.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx: In function ‘void f(const std::allocator<char>&)’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:256:25: error: no matching function for call to ‘std::allocator<char>::max_size(long unsigned int) const’
+   a.max_size(sizeof(int));
+                         ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:256:25: note: candidate is:
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/4.8/bits/allocator.h:46,
+                 from /usr/include/c++/4.8/memory:63,
+                 from /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:253:
+/usr/include/c++/4.8/ext/new_allocator.h:113:7: note: __gnu_cxx::new_allocator<_Tp>::size_type __gnu_cxx::new_allocator<_Tp>::max_size() const [with _Tp = char; __gnu_cxx::new_allocator<_Tp>::size_type = long unsigned int]
+       max_size() const _GLIBCXX_USE_NOEXCEPT
+       ^
+/usr/include/c++/4.8/ext/new_allocator.h:113:7: note:   candidate expects 0 arguments, 1 provided
+make[1]: *** [CMakeFiles/cmTryCompileExec1838785402.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1838785402/fast] Error 2
+
+
+Checking whether "<>" is needed for template friends failed to compile with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3969276856/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3969276856.dir/build.make CMakeFiles/cmTryCompileExec3969276856.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3969276856.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/c++   -DTEST_KWSYS_CXX_HAS_NULL_TEMPLATE_ARGS  -o CMakeFiles/cmTryCompileExec3969276856.dir/kwsysPlatformTestsCXX.cxx.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:141:21: warning: friend declaration ‘int f(A<T>&)’ declares a non-template function [-Wnon-template-friend]
+   friend int f(A<T>&);
+                     ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:141:21: note: (if this is not what you intended, make sure the function template has already been declared and add <> after the function name here) 
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx: In instantiation of ‘int f(A<T>&) [with T = int]’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:147:23:   required from here
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:143:7: error: ‘int A<int>::x’ is private
+   int x;
+       ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:146:48: error: within this context
+ template <class T> int f(A<T>& a) { return a.x = 0; }
+                                                ^
+make[1]: *** [CMakeFiles/cmTryCompileExec3969276856.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3969276856/fast] Error 2
+
+
+Checking whether C++ compiler has '__int64' failed to compile with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1244281373/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1244281373.dir/build.make CMakeFiles/cmTryCompileExec1244281373.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1244281373.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/c++   -DTEST_KWSYS_CXX_HAS___INT64  -o CMakeFiles/cmTryCompileExec1244281373.dir/kwsysPlatformTestsCXX.cxx.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:126:1: error: ‘__int64’ does not name a type
+ __int64 f(__int64 n) { return n; }
+ ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:129:3: error: ‘__int64’ was not declared in this scope
+   __int64 n = 0;
+   ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:129:11: error: expected ‘;’ before ‘n’
+   __int64 n = 0;
+           ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:130:29: error: ‘n’ was not declared in this scope
+   return static_cast<int>(f(n));
+                             ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:130:30: error: ‘f’ was not declared in this scope
+   return static_cast<int>(f(n));
+                              ^
+make[1]: *** [CMakeFiles/cmTryCompileExec1244281373.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1244281373/fast] Error 2
+
+
+Determining size of __int64 failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec908264719/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec908264719.dir/build.make CMakeFiles/cmTryCompileExec908264719.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec908264719.dir/KWSYS_SIZEOF___INT64.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec908264719.dir/KWSYS_SIZEOF___INT64.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/KWSYS_SIZEOF___INT64.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/KWSYS_SIZEOF___INT64.c:17:22: error: ‘__int64’ undeclared here (not in a function)
+ #define SIZE (sizeof(__int64))
+                      ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/KWSYS_SIZEOF___INT64.c:19:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^
+make[1]: *** [CMakeFiles/cmTryCompileExec908264719.dir/KWSYS_SIZEOF___INT64.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec908264719/fast] Error 2
+
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/KWSYS_SIZEOF___INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(__int64))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Checking whether CXX compiler has environ in stdlib.h failed to compile with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec515832846/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec515832846.dir/build.make CMakeFiles/cmTryCompileExec515832846.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec515832846.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/c++   -DTEST_KWSYS_CXX_HAS_ENVIRON_IN_STDLIB_H  -o CMakeFiles/cmTryCompileExec515832846.dir/kwsysPlatformTestsCXX.cxx.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:450:13: error: ‘environ’ was not declared in this scope
+   char* e = environ[0];
+             ^
+make[1]: *** [CMakeFiles/cmTryCompileExec515832846.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec515832846/fast] Error 2
+
+
+Checking whether CXX compiler has _atoi64 failed to compile with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1805656935/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1805656935.dir/build.make CMakeFiles/cmTryCompileExec1805656935.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1805656935.dir/kwsysPlatformTestsCXX.cxx.o
+/usr/bin/c++   -DTEST_KWSYS_CXX_HAS__ATOI64  -o CMakeFiles/cmTryCompileExec1805656935.dir/kwsysPlatformTestsCXX.cxx.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx: In function ‘int main()’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/kwsysPlatformTestsCXX.cxx:493:38: error: ‘_atoi64’ was not declared in this scope
+   return static_cast<int>(_atoi64(str));
+                                      ^
+make[1]: *** [CMakeFiles/cmTryCompileExec1805656935.dir/kwsysPlatformTestsCXX.cxx.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Utilities/KWSys/vtksys/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1805656935/fast] Error 2
+
+
+Determining if files windows.h exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1341390548/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1341390548.dir/build.make CMakeFiles/cmTryCompileExec1341390548.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1341390548.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec1341390548.dir/CheckIncludeFiles.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:21: fatal error: windows.h: No such file or directory
+ #include <windows.h>
+                     ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1341390548.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1341390548/fast] Error 2
+
+Source:
+/* */
+#include <windows.h>
+
+
+int main(){return 0;}
+
+Determining if files ieeefp.h exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2918890963/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2918890963.dir/build.make CMakeFiles/cmTryCompileExec2918890963.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2918890963.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec2918890963.dir/CheckIncludeFiles.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:20: fatal error: ieeefp.h: No such file or directory
+ #include <ieeefp.h>
+                    ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec2918890963.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2918890963/fast] Error 2
+
+Source:
+/* */
+#include <ieeefp.h>
+
+
+int main(){return 0;}
+
+Determining if the function floor exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3142430978/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3142430978.dir/build.make CMakeFiles/cmTryCompileExec3142430978.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3142430978.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -w -w -DCHECK_FUNCTION_EXISTS=floor   -o CMakeFiles/cmTryCompileExec3142430978.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3142430978
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3142430978.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=floor    CMakeFiles/cmTryCompileExec3142430978.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3142430978 -rdynamic 
+CMakeFiles/cmTryCompileExec3142430978.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `floor'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3142430978] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3142430978/fast] Error 2
+
+
+Determining if the function pow exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2290638412/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2290638412.dir/build.make CMakeFiles/cmTryCompileExec2290638412.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2290638412.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -w -w -DCHECK_FUNCTION_EXISTS=pow   -o CMakeFiles/cmTryCompileExec2290638412.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2290638412
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2290638412.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=pow    CMakeFiles/cmTryCompileExec2290638412.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2290638412 -rdynamic 
+CMakeFiles/cmTryCompileExec2290638412.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `pow'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec2290638412] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2290638412/fast] Error 2
+
+
+Determining if the function sqrt exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4111780802/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4111780802.dir/build.make CMakeFiles/cmTryCompileExec4111780802.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4111780802.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -w -w -DCHECK_FUNCTION_EXISTS=sqrt   -o CMakeFiles/cmTryCompileExec4111780802.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec4111780802
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4111780802.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=sqrt    CMakeFiles/cmTryCompileExec4111780802.dir/CheckFunctionExists.c.o  -o cmTryCompileExec4111780802 -rdynamic 
+CMakeFiles/cmTryCompileExec4111780802.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `sqrt'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec4111780802] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec4111780802/fast] Error 2
+
+
+Determining if the function WSAStartup exists in the ws2_32;m;dl failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3216206019/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3216206019.dir/build.make CMakeFiles/cmTryCompileExec3216206019.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3216206019.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -w -w -DCHECK_FUNCTION_EXISTS=WSAStartup   -o CMakeFiles/cmTryCompileExec3216206019.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3216206019
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3216206019.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=WSAStartup    CMakeFiles/cmTryCompileExec3216206019.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3216206019 -rdynamic -lws2_32 -lm -ldl 
+/usr/bin/ld: cannot find -lws2_32
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3216206019] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3216206019/fast] Error 2
+
+
+Determining if the function gethostbyname exists in the wsock32;m;dl failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1586707993/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1586707993.dir/build.make CMakeFiles/cmTryCompileExec1586707993.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1586707993.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -w -w -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec1586707993.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1586707993
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1586707993.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec1586707993.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1586707993 -rdynamic -lwsock32 -lm -ldl 
+/usr/bin/ld: cannot find -lwsock32
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec1586707993] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1586707993/fast] Error 2
+
+
+Determining if the function gethostname exists in the ucb;m;dl failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2256109212/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2256109212.dir/build.make CMakeFiles/cmTryCompileExec2256109212.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2256109212.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -w -w -DCHECK_FUNCTION_EXISTS=gethostname   -o CMakeFiles/cmTryCompileExec2256109212.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2256109212
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2256109212.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=gethostname    CMakeFiles/cmTryCompileExec2256109212.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2256109212 -rdynamic -lucb -lm -ldl 
+/usr/bin/ld: cannot find -lucb
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec2256109212] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2256109212/fast] Error 2
+
+
+Determining if the function connect exists in the socket;m;dl failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3881136504/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3881136504.dir/build.make CMakeFiles/cmTryCompileExec3881136504.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3881136504.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -w -w -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec3881136504.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3881136504
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3881136504.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec3881136504.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3881136504 -rdynamic -lsocket -lm -ldl 
+/usr/bin/ld: cannot find -lsocket
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3881136504] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3881136504/fast] Error 2
+
+
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3714727783/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3714727783.dir/build.make CMakeFiles/cmTryCompileExec3714727783.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3714727783.dir/TestEndianess.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec3714727783.dir/TestEndianess.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTryCompileExec3714727783
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3714727783.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w     CMakeFiles/cmTryCompileExec3714727783.dir/TestEndianess.c.o  -o cmTryCompileExec3714727783 -rdynamic 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the function clock_gettime exists in the posix4 failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2532335530/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2532335530.dir/build.make CMakeFiles/cmTryCompileExec2532335530.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2532335530.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -w -w -DCHECK_FUNCTION_EXISTS=clock_gettime   -o CMakeFiles/cmTryCompileExec2532335530.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2532335530
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2532335530.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=clock_gettime    CMakeFiles/cmTryCompileExec2532335530.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2532335530 -rdynamic -lposix4 -lm -ldl 
+/usr/bin/ld: cannot find -lposix4
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec2532335530] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2532335530/fast] Error 2
+
+
+Determining if files sys/resource.h;sys/time.h;unistd.h;sys/ioctl.h;sys/stat.h;sys/socket.h;sys/types.h;stddef.h;setjmp.h;features.h;dirent.h;stdint.h;mach/mach_time.h exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4006593441/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4006593441.dir/build.make CMakeFiles/cmTryCompileExec4006593441.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4006593441.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec4006593441.dir/CheckIncludeFiles.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:14:28: fatal error: mach/mach_time.h: No such file or directory
+ #include <mach/mach_time.h>
+                            ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec4006593441.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec4006593441/fast] Error 2
+
+Source:
+/* */
+#include <sys/resource.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <features.h>
+#include <dirent.h>
+#include <stdint.h>
+#include <mach/mach_time.h>
+
+
+int main(){return 0;}
+
+Determining if files sys/resource.h;sys/time.h;unistd.h;sys/ioctl.h;sys/stat.h;sys/socket.h;sys/types.h;stddef.h;setjmp.h;features.h;dirent.h;stdint.h;io.h exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1633520078/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1633520078.dir/build.make CMakeFiles/cmTryCompileExec1633520078.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1633520078.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec1633520078.dir/CheckIncludeFiles.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:14:16: fatal error: io.h: No such file or directory
+ #include <io.h>
+                ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec1633520078.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1633520078/fast] Error 2
+
+Source:
+/* */
+#include <sys/resource.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <features.h>
+#include <dirent.h>
+#include <stdint.h>
+#include <io.h>
+
+
+int main(){return 0;}
+
+Determining if files sys/resource.h;sys/time.h;unistd.h;sys/ioctl.h;sys/stat.h;sys/socket.h;sys/types.h;stddef.h;setjmp.h;features.h;dirent.h;stdint.h;winsock2.h exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4004794199/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4004794199.dir/build.make CMakeFiles/cmTryCompileExec4004794199.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4004794199.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec4004794199.dir/CheckIncludeFiles.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:14:22: fatal error: winsock2.h: No such file or directory
+ #include <winsock2.h>
+                      ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec4004794199.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec4004794199/fast] Error 2
+
+Source:
+/* */
+#include <sys/resource.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <features.h>
+#include <dirent.h>
+#include <stdint.h>
+#include <winsock2.h>
+
+
+int main(){return 0;}
+
+Determining if files sys/resource.h;sys/time.h;unistd.h;sys/ioctl.h;sys/stat.h;sys/socket.h;sys/types.h;stddef.h;setjmp.h;features.h;dirent.h;stdint.h;sys/timeb.h;globus/common.h exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3573078753/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3573078753.dir/build.make CMakeFiles/cmTryCompileExec3573078753.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3573078753.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec3573078753.dir/CheckIncludeFiles.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:15:27: fatal error: globus/common.h: No such file or directory
+ #include <globus/common.h>
+                           ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3573078753.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3573078753/fast] Error 2
+
+Source:
+/* */
+#include <sys/resource.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <features.h>
+#include <dirent.h>
+#include <stdint.h>
+#include <sys/timeb.h>
+#include <globus/common.h>
+
+
+int main(){return 0;}
+
+Determining if files sys/resource.h;sys/time.h;unistd.h;sys/ioctl.h;sys/stat.h;sys/socket.h;sys/types.h;stddef.h;setjmp.h;features.h;dirent.h;stdint.h;sys/timeb.h;pdb.h exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec428660189/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec428660189.dir/build.make CMakeFiles/cmTryCompileExec428660189.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec428660189.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec428660189.dir/CheckIncludeFiles.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:15:17: fatal error: pdb.h: No such file or directory
+ #include <pdb.h>
+                 ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec428660189.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec428660189/fast] Error 2
+
+Source:
+/* */
+#include <sys/resource.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <features.h>
+#include <dirent.h>
+#include <stdint.h>
+#include <sys/timeb.h>
+#include <pdb.h>
+
+
+int main(){return 0;}
+
+Determining if files sys/resource.h;sys/time.h;unistd.h;sys/ioctl.h;sys/stat.h;sys/socket.h;sys/types.h;stddef.h;setjmp.h;features.h;dirent.h;stdint.h;sys/timeb.h;pthread.h;srbclient.h exist failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3936334657/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3936334657.dir/build.make CMakeFiles/cmTryCompileExec3936334657.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3936334657.dir/CheckIncludeFiles.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec3936334657.dir/CheckIncludeFiles.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:16:23: fatal error: srbclient.h: No such file or directory
+ #include <srbclient.h>
+                       ^
+compilation terminated.
+make[1]: *** [CMakeFiles/cmTryCompileExec3936334657.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3936334657/fast] Error 2
+
+Source:
+/* */
+#include <sys/resource.h>
+#include <sys/time.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <stddef.h>
+#include <setjmp.h>
+#include <features.h>
+#include <dirent.h>
+#include <stdint.h>
+#include <sys/timeb.h>
+#include <pthread.h>
+#include <srbclient.h>
+
+
+int main(){return 0;}
+
+Determining size of __int64 failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1732787328/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1732787328.dir/build.make CMakeFiles/cmTryCompileExec1732787328.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1732787328.dir/H5_SIZEOF___INT64.c.o
+/usr/bin/cc  -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -w -w    -o CMakeFiles/cmTryCompileExec1732787328.dir/H5_SIZEOF___INT64.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/H5_SIZEOF___INT64.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/H5_SIZEOF___INT64.c:17:22: error: ‘__int64’ undeclared here (not in a function)
+ #define SIZE (sizeof(__int64))
+                      ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/H5_SIZEOF___INT64.c:19:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^
+make[1]: *** [CMakeFiles/cmTryCompileExec1732787328.dir/H5_SIZEOF___INT64.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1732787328/fast] Error 2
+
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/H5_SIZEOF___INT64.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(__int64))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the variable CLOCK_MONOTONIC exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec313761468/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec313761468.dir/build.make CMakeFiles/cmTryCompileExec313761468.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec313761468.dir/CheckVariableExists.c.o
+/usr/bin/cc  -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -w -w -DCHECK_VARIABLE_EXISTS=CLOCK_MONOTONIC   -o CMakeFiles/cmTryCompileExec313761468.dir/CheckVariableExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckVariableExists.c
+Linking C executable cmTryCompileExec313761468
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec313761468.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_VARIABLE_EXISTS=CLOCK_MONOTONIC    CMakeFiles/cmTryCompileExec313761468.dir/CheckVariableExists.c.o  -o cmTryCompileExec313761468 -rdynamic -lm -ldl 
+CMakeFiles/cmTryCompileExec313761468.dir/CheckVariableExists.c.o: In function `main':
+CheckVariableExists.c:(.text+0x25): undefined reference to `CLOCK_MONOTONIC'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec313761468] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec313761468/fast] Error 2
+
+
+Performing Other Test HAVE___TM_GMTOFF failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2650472545/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2650472545.dir/build.make CMakeFiles/cmTryCompileExec2650472545.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2650472545.dir/HDF5Tests.c.o
+/usr/bin/cc   -w -w -DHAVE___TM_GMTOFF  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -o CMakeFiles/cmTryCompileExec2650472545.dir/HDF5Tests.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c: In function ‘main’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c:191:29: error: ‘struct tm’ has no member named ‘__tm_gmtoff’
+ SIMPLE_TEST(struct tm tm; tm.__tm_gmtoff=0);
+                             ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c:1:36: note: in definition of macro ‘SIMPLE_TEST’
+ #define SIMPLE_TEST(x) int main(){ x; return 0; }
+                                    ^
+make[1]: *** [CMakeFiles/cmTryCompileExec2650472545.dir/HDF5Tests.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2650472545/fast] Error 2
+
+Performing Other Test HAVE_STRUCT_VIDEOCONFIG failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1381072229/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1381072229.dir/build.make CMakeFiles/cmTryCompileExec1381072229.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1381072229.dir/HDF5Tests.c.o
+/usr/bin/cc   -w -w -DHAVE_STRUCT_VIDEOCONFIG  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -o CMakeFiles/cmTryCompileExec1381072229.dir/HDF5Tests.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c: In function ‘main’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c:460:32: error: storage size of ‘w’ isn’t known
+ SIMPLE_TEST(struct videoconfig w; w.numtextcols=0);
+                                ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c:1:36: note: in definition of macro ‘SIMPLE_TEST’
+ #define SIMPLE_TEST(x) int main(){ x; return 0; }
+                                    ^
+make[1]: *** [CMakeFiles/cmTryCompileExec1381072229.dir/HDF5Tests.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1381072229/fast] Error 2
+
+Performing Other Test HAVE_STRUCT_TEXT_INFO failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec543392944/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec543392944.dir/build.make CMakeFiles/cmTryCompileExec543392944.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec543392944.dir/HDF5Tests.c.o
+/usr/bin/cc   -w -w -DHAVE_STRUCT_TEXT_INFO  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -o CMakeFiles/cmTryCompileExec543392944.dir/HDF5Tests.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c: In function ‘main’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c:466:30: error: storage size of ‘w’ isn’t known
+ SIMPLE_TEST(struct text_info w; w.screenwidth=0);
+                              ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5Tests.c:1:36: note: in definition of macro ‘SIMPLE_TEST’
+ #define SIMPLE_TEST(x) int main(){ x; return 0; }
+                                    ^
+make[1]: *** [CMakeFiles/cmTryCompileExec543392944.dir/HDF5Tests.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec543392944/fast] Error 2
+
+Determining if the function _getvideoconfig exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3440443941/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3440443941.dir/build.make CMakeFiles/cmTryCompileExec3440443941.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3440443941.dir/CheckFunctionExists.c.o
+/usr/bin/cc  -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -w -w -DCHECK_FUNCTION_EXISTS=_getvideoconfig   -o CMakeFiles/cmTryCompileExec3440443941.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3440443941
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3440443941.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=_getvideoconfig    CMakeFiles/cmTryCompileExec3440443941.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3440443941 -rdynamic -lm -ldl 
+CMakeFiles/cmTryCompileExec3440443941.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `_getvideoconfig'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3440443941] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3440443941/fast] Error 2
+
+
+Determining if the function gettextinfo exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec755250261/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec755250261.dir/build.make CMakeFiles/cmTryCompileExec755250261.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec755250261.dir/CheckFunctionExists.c.o
+/usr/bin/cc  -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -w -w -DCHECK_FUNCTION_EXISTS=gettextinfo   -o CMakeFiles/cmTryCompileExec755250261.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec755250261
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec755250261.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=gettextinfo    CMakeFiles/cmTryCompileExec755250261.dir/CheckFunctionExists.c.o  -o cmTryCompileExec755250261 -rdynamic -lm -ldl 
+CMakeFiles/cmTryCompileExec755250261.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `gettextinfo'
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec755250261] Error 1
+make: *** [cmTryCompileExec755250261/fast] Error 2
+
+
+Determining if the function _scrsize exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2343428493/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2343428493.dir/build.make CMakeFiles/cmTryCompileExec2343428493.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2343428493.dir/CheckFunctionExists.c.o
+/usr/bin/cc  -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -w -w -DCHECK_FUNCTION_EXISTS=_scrsize   -o CMakeFiles/cmTryCompileExec2343428493.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2343428493
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2343428493.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=_scrsize    CMakeFiles/cmTryCompileExec2343428493.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2343428493 -rdynamic -lm -ldl 
+CMakeFiles/cmTryCompileExec2343428493.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `_scrsize'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec2343428493] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec2343428493/fast] Error 2
+
+
+Determining if the function GetConsoleScreenBufferInfo exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1205806011/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1205806011.dir/build.make CMakeFiles/cmTryCompileExec1205806011.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1205806011.dir/CheckFunctionExists.c.o
+/usr/bin/cc  -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -w -w -DCHECK_FUNCTION_EXISTS=GetConsoleScreenBufferInfo   -o CMakeFiles/cmTryCompileExec1205806011.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1205806011
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1205806011.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=GetConsoleScreenBufferInfo    CMakeFiles/cmTryCompileExec1205806011.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1205806011 -rdynamic -lm -ldl 
+CMakeFiles/cmTryCompileExec1205806011.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `GetConsoleScreenBufferInfo'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec1205806011] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1205806011/fast] Error 2
+
+
+Determining if the function setsysinfo exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1311262017/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1311262017.dir/build.make CMakeFiles/cmTryCompileExec1311262017.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1311262017.dir/CheckFunctionExists.c.o
+/usr/bin/cc  -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -w -w -DCHECK_FUNCTION_EXISTS=setsysinfo   -o CMakeFiles/cmTryCompileExec1311262017.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1311262017
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1311262017.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=setsysinfo    CMakeFiles/cmTryCompileExec1311262017.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1311262017 -rdynamic -lm -ldl 
+CMakeFiles/cmTryCompileExec1311262017.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `setsysinfo'
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec1311262017] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1311262017/fast] Error 2
+
+
+Determining if the function sigsetjmp exists failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec436716186/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec436716186.dir/build.make CMakeFiles/cmTryCompileExec436716186.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec436716186.dir/CheckFunctionExists.c.o
+/usr/bin/cc  -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -w -w -DCHECK_FUNCTION_EXISTS=sigsetjmp   -o CMakeFiles/cmTryCompileExec436716186.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec436716186
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec436716186.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DCHECK_FUNCTION_EXISTS=sigsetjmp    CMakeFiles/cmTryCompileExec436716186.dir/CheckFunctionExists.c.o  -o cmTryCompileExec436716186 -rdynamic -lm -ldl 
+CMakeFiles/cmTryCompileExec436716186.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x15): undefined reference to `sigsetjmp'
+collect2: error: ld returned 1 exit status
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make[1]: *** [cmTryCompileExec436716186] Error 1
+make: *** [cmTryCompileExec436716186/fast] Error 2
+
+
+Performing CXX Test OLD_HEADER_FILENAME failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec25411596/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec25411596.dir/build.make CMakeFiles/cmTryCompileExec25411596.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec25411596.dir/HDF5CXXTests.cpp.o
+/usr/bin/c++    -w -w -DOLD_HEADER_FILENAME  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -o CMakeFiles/cmTryCompileExec25411596.dir/HDF5CXXTests.cpp.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5CXXTests.cpp
+Linking CXX executable cmTryCompileExec25411596
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec25411596.dir/link.txt --verbose=1
+/usr/bin/c++     -w -w -DOLD_HEADER_FILENAME  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE    CMakeFiles/cmTryCompileExec25411596.dir/HDF5CXXTests.cpp.o  -o cmTryCompileExec25411596 -rdynamic -lm -ldl 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+
+Performing CXX Test H5_NO_NAMESPACE failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec590554075/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec590554075.dir/build.make CMakeFiles/cmTryCompileExec590554075.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec590554075.dir/HDF5CXXTests.cpp.o
+/usr/bin/c++    -w -w -DH5_NO_NAMESPACE  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -o CMakeFiles/cmTryCompileExec590554075.dir/HDF5CXXTests.cpp.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5CXXTests.cpp
+Linking CXX executable cmTryCompileExec590554075
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec590554075.dir/link.txt --verbose=1
+/usr/bin/c++     -w -w -DH5_NO_NAMESPACE  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE    CMakeFiles/cmTryCompileExec590554075.dir/HDF5CXXTests.cpp.o  -o cmTryCompileExec590554075 -rdynamic -lm -ldl 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+
+Performing CXX Test H5_NO_STD failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec9556737/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec9556737.dir/build.make CMakeFiles/cmTryCompileExec9556737.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec9556737.dir/HDF5CXXTests.cpp.o
+/usr/bin/c++    -w -w -DH5_NO_STD  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -o CMakeFiles/cmTryCompileExec9556737.dir/HDF5CXXTests.cpp.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5CXXTests.cpp
+Linking CXX executable cmTryCompileExec9556737
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec9556737.dir/link.txt --verbose=1
+/usr/bin/c++     -w -w -DH5_NO_STD  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE    CMakeFiles/cmTryCompileExec9556737.dir/HDF5CXXTests.cpp.o  -o cmTryCompileExec9556737 -rdynamic -lm -ldl 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+
+Performing CXX Test BOOL_NOTDEFINED failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2327485078/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2327485078.dir/build.make CMakeFiles/cmTryCompileExec2327485078.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec2327485078.dir/HDF5CXXTests.cpp.o
+/usr/bin/c++    -w -w -DBOOL_NOTDEFINED  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -o CMakeFiles/cmTryCompileExec2327485078.dir/HDF5CXXTests.cpp.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5CXXTests.cpp
+Linking CXX executable cmTryCompileExec2327485078
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2327485078.dir/link.txt --verbose=1
+/usr/bin/c++     -w -w -DBOOL_NOTDEFINED  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE    CMakeFiles/cmTryCompileExec2327485078.dir/HDF5CXXTests.cpp.o  -o cmTryCompileExec2327485078 -rdynamic -lm -ldl 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+
+Performing CXX Test NO_STATIC_CAST failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3078687332/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3078687332.dir/build.make CMakeFiles/cmTryCompileExec3078687332.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3078687332.dir/HDF5CXXTests.cpp.o
+/usr/bin/c++    -w -w -DNO_STATIC_CAST  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE   -o CMakeFiles/cmTryCompileExec3078687332.dir/HDF5CXXTests.cpp.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/HDF5CXXTests.cpp
+Linking CXX executable cmTryCompileExec3078687332
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3078687332.dir/link.txt --verbose=1
+/usr/bin/c++     -w -w -DNO_STATIC_CAST  -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H -DHAVE_SYS_TYPES_H -DHAVE_SYS_SOCKET_H -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE    CMakeFiles/cmTryCompileExec3078687332.dir/HDF5CXXTests.cpp.o  -o cmTryCompileExec3078687332 -rdynamic -lm -ldl 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+
+Test H5_FP_TO_ULLONG_RIGHT_MAXIMUM Run failed with the following output and exit code:
+ Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/CMake/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec808646362/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec808646362.dir/build.make CMakeFiles/cmTryCompileExec808646362.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/CMake/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/CMake/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec808646362.dir/ConversionTests.c.o
+/usr/bin/cc   -w -w -DH5_FP_TO_ULLONG_RIGHT_MAXIMUM_TEST   -o CMakeFiles/cmTryCompileExec808646362.dir/ConversionTests.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/config/cmake/ConversionTests.c
+Linking C executable cmTryCompileExec808646362
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec808646362.dir/link.txt --verbose=1
+/usr/bin/cc    -w -w -DH5_FP_TO_ULLONG_RIGHT_MAXIMUM_TEST    CMakeFiles/cmTryCompileExec808646362.dir/ConversionTests.c.o  -o cmTryCompileExec808646362 -rdynamic 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/ThirdParty/hdf5/vtkhdf5/CMake/CMakeFiles/CMakeTmp'
+
+Determining size of uchar failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3476342371/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3476342371.dir/build.make CMakeFiles/cmTryCompileExec3476342371.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3476342371.dir/SIZEOF_UCHAR.c.o
+/usr/bin/cc   -w -w    -o CMakeFiles/cmTryCompileExec3476342371.dir/SIZEOF_UCHAR.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/SIZEOF_UCHAR.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/SIZEOF_UCHAR.c:17:22: error: ‘uchar’ undeclared here (not in a function)
+ #define SIZE (sizeof(uchar))
+                      ^
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/SIZEOF_UCHAR.c:19:12: note: in expansion of macro ‘SIZE’
+   ('0' + ((SIZE / 10000)%10)),
+            ^
+make[1]: *** [CMakeFiles/cmTryCompileExec3476342371.dir/SIZEOF_UCHAR.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3476342371/fast] Error 2
+
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CheckTypeSize/SIZEOF_UCHAR.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#endif
+
+#define SIZE (sizeof(uchar))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Performing C SOURCE FILE Test GLX_DEFINES_TYPE_GLXextFuncPtr_AS_EMPTY failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3237538942/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3237538942.dir/build.make CMakeFiles/cmTryCompileExec3237538942.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3237538942.dir/src.c.o
+/usr/bin/cc   -DGLX_DEFINES_TYPE_GLXextFuncPtr_AS_EMPTY   -o CMakeFiles/cmTryCompileExec3237538942.dir/src.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c:8:2: error: too many arguments to function ‘f’
+  f(x); /* fails if prototype is void, pass if prototype is empty. */
+  ^
+make[1]: *** [CMakeFiles/cmTryCompileExec3237538942.dir/src.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3237538942/fast] Error 2
+
+Source file was:
+
+#define GLX_GLXEXT_LEGACY
+#include <GL/glx.h>
+int main()
+{
+ __GLXextFuncPtr f;
+ int x;
+ f(x); /* fails if prototype is void, pass if prototype is empty. */
+
+ return 0;
+}
+
+Performing C SOURCE FILE Test GLX_DECLARES_FUNCTION_glXGetProcAddressARB_AS_EMPTY failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1043743204/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1043743204.dir/build.make CMakeFiles/cmTryCompileExec1043743204.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1043743204.dir/src.c.o
+/usr/bin/cc   -DGLX_DECLARES_FUNCTION_glXGetProcAddressARB_AS_EMPTY   -o CMakeFiles/cmTryCompileExec1043743204.dir/src.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c:8:2: error: too many arguments to function ‘glXGetProcAddressARB((const GLubyte *)"aRandomFunction")’
+  glXGetProcAddressARB((const GLubyte *)("aRandomFunction"))(x);
+  ^
+make[1]: *** [CMakeFiles/cmTryCompileExec1043743204.dir/src.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1043743204/fast] Error 2
+
+Source file was:
+
+#define GLX_GLXEXT_LEGACY
+#include <GL/glx.h>
+int main()
+{
+ int x;
+ /* fails if prototype is void, pass if prototype is empty. */
+ glXGetProcAddressARB((const GLubyte *)("aRandomFunction"))(x);
+ return 0;
+}
+
+Performing C SOURCE FILE Test GLX_DECLARES_FUNCTION_glXGetProcAddress_AS_EMPTY failed with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3331089958/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3331089958.dir/build.make CMakeFiles/cmTryCompileExec3331089958.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3331089958.dir/src.c.o
+/usr/bin/cc   -DGLX_DECLARES_FUNCTION_glXGetProcAddress_AS_EMPTY   -o CMakeFiles/cmTryCompileExec3331089958.dir/src.c.o   -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/src.c:8:2: error: too many arguments to function ‘glXGetProcAddress((const GLubyte *)"aRandomFunction")’
+  glXGetProcAddress((const GLubyte *)("aRandomFunction"))(x);
+  ^
+make[1]: *** [CMakeFiles/cmTryCompileExec3331089958.dir/src.c.o] Error 1
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3331089958/fast] Error 2
+
+Source file was:
+
+#define GLX_GLXEXT_LEGACY
+#include <GL/glx.h>
+int main()
+{
+ int x;
+ /* fails if prototype is void, pass if prototype is empty. */
+ glXGetProcAddress((const GLubyte *)("aRandomFunction"))(x);
+ return 0;
+}
+

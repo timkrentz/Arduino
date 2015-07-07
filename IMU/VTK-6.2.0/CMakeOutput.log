@@ -1,0 +1,15 @@
+Determining if glXGetProcAddressARB exists in GL/glx.h TRUE with the following output:
+Change Dir: /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec405586102/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec405586102.dir/build.make CMakeFiles/cmTryCompileExec405586102.dir/build
+make[1]: Entering directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec405586102.dir/CheckglXGetProcAddressARB.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTryCompileExec405586102.dir/CheckglXGetProcAddressARB.cxx.o -c /home/tim/CMU/SunTracker/IMU/VTK-6.2.0/Rendering/OpenGL/CheckglXGetProcAddressARB.cxx
+Linking CXX executable cmTryCompileExec405586102
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec405586102.dir/link.txt --verbose=1
+/usr/bin/c++         CMakeFiles/cmTryCompileExec405586102.dir/CheckglXGetProcAddressARB.cxx.o  -o cmTryCompileExec405586102 -rdynamic -lGLU -lGL -lSM -lICE -lX11 -lXext -lpthread -lm 
+make[1]: Leaving directory `/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeFiles/CMakeTmp'
+
+

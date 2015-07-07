@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeTmp/TestExplicitInstantiation/A.cxx
+A.h
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeTmp/TestExplicitInstantiation/A.h
+
+/home/tim/CMU/SunTracker/IMU/VTK-6.2.0/CMakeTmp/TestExplicitInstantiation/A.h
+
