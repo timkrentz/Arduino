@@ -30,16 +30,9 @@ class accelerometer:
 		self.dataOut = []
 
 		#Try 'timeOut' times to read from serial
-		timeOut = 200
+		timeOut = 10
 		while timeOut > 0:
 			timeOut -= 1
-
-			#Send request byte to Arduino
-			self.ser.write(chr(0x5A))
-
-			#Check if data is available on serial line, otherwise re-loop
-			if self.ser.inWaiting() <= 0:
-				continue
 
 			#Read string from serial
 			self.stringIn = self.ser.readline()
