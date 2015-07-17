@@ -1,5 +1,5 @@
 # Package for getting the current location of the sun
-# Requires tPyEphem (ephem) and datetime (datetime) libraries
+# Requires PyEphem (ephem) and datetime (datetime) libraries
 # Author: Tim Krentz
 # June 22, 2015
 
@@ -13,7 +13,7 @@ import datetime
 def getBearing(latitude=40.442947, longitude=-79.945108, elevation=269):
 	"""getBearing returns a 2-element vector of (1) angle from North and (2) elevation from horizon"""
 
-	# Create 'Observer' object in PyEphem call it 'curr'
+	# Create 'Observer' object in PyEphem
 	curr = ephem.Observer()
 
 	# Assign observer's longitude, latitude, and elevation
@@ -28,7 +28,7 @@ def getBearing(latitude=40.442947, longitude=-79.945108, elevation=269):
 	b = ephem.Sun(curr)
 
 	# Return the azimuth from North and the altitude above horizon to the Sun
-	return [b.a, b.alt]
+	return [b.az, b.alt]
 
 
 ####################################################################################################
@@ -39,4 +39,4 @@ if __name__ == "__main__":
 	
 	# Get the current angles to sun from asphalt outside PRL highbay, and print them out
 	temp = getBearing()
-	print('The Sun is currently %s degrees from North and %s degrees above the horizon.' % (temp[0],temp[1])t)
+	print('The Sun is currently %s degrees from North and %s degrees above the horizon.' % (temp[0],temp[1]))

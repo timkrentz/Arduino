@@ -1,4 +1,4 @@
-# Package for reading Acceleromter->Arduino setup
+:# Package for reading Acceleromter->Arduino setup
 # Author: Tim Krentz
 # Created Friday, June 16, 2015
 
@@ -13,10 +13,11 @@ class accelerometer:
 	#Accelerometer initialization function, creates and returns accelerometer object
 	#Can accept port name and buadrate
 	#Assumes 8 bits, no parity, 1 stop bit
-	def __init__(self, port='/dev/ttyACM0', baudrate=115200):
+	def __init__(self, port='/dev/ttyACM1', baudrate=115200):
 
 		#Open serial port, assign to 'ser'
 		self.ser = serial.Serial(port, baudrate)
+		self.ser.timeout = 1
 
 
 ###############################################################################################
@@ -33,6 +34,10 @@ class accelerometer:
 		timeOut = 10
 		while timeOut > 0:
 			timeOut -= 1
+
+			#Request a vector from the Arduino
+			#'Z' is the password to get a reading
+			self.ser.write('Z')
 
 			#Read string from serial
 			self.stringIn = self.ser.readline()
@@ -61,12 +66,13 @@ class accelerometer:
 		#This bit prints to console if no good string was read
 		if timeOut <= 0:
 			print('ERROR: TIMEOUT')
-			return [0,0,0]			#This could be improved with actual
+			return -1			#This could be improved with actual
 							#error handeling
 		else:
 			phi = math.degrees(math.atan2(self.dataOut[2],math.hypot(self.dataOut[0],self.dataOut[1])))
 			theta = math.degrees(math.atan2(self.dataOut[1],self.dataOut[0]))
-			return [theta,phi]
+			#return [theta,phi]
+			return [self.dataOut[0],self.dataOut[1],self.dataOut[2]]
 			
  
 		
@@ -75,11 +81,13 @@ class accelerometer:
 
 #Testbench code, runs if top-level
 if __name__ == "__main__":
+	import time
 	
 	#Create accelerometer object
 	accel =	accelerometer()
 
-	#Read a force vector from accelerometer
-	angs = accel.getVector()
-	print('Current force vector: ',angs)
-
+	while True:
+		#Read a force vector from accelerometer
+		angs = accel.getVector()
+		print 'Current force vector: ',angs
+		time.sleep(0.25)

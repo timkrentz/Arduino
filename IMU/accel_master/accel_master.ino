@@ -13,13 +13,15 @@ http://arduino.cc
 /////////////////////////////////
 */
 //// VARS
-int CS_pin = 9;
-int CLK_pin = 10;
-int DIO_pin = 11;
+int CS_pin = 11;
+int CLK_pin = 13;
+int DIO_pin = 12;
 
 int aX  = 0;
 int aY  = 0;
 int aZ  = 0;
+
+char password = 0x5A;  // HEX representation of 'Z'
 
 //// FUNCTIONS
 void StartBit() {
@@ -121,7 +123,7 @@ void loop() {
   
   if (Serial.available() > 0) {
     
-    if (Serial.read() == 0x5A) {
+    if (Serial.read() == password) {
   
       aX = GetValue(B1000);
       aY = GetValue(B1001);

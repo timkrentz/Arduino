@@ -3,6 +3,6 @@
 import bearing
 
 angles = bearing.getBearing()
-
+print (angles)
 
 

@@ -1,3 +1,6 @@
+#include <HW_AVR_SPI_defines.h>
+#include <UTFT_SPI.h>
+
 
 // ArduCAM demo (C)2015 Lee
 // web: http://www.ArduCAM.com
@@ -80,7 +83,6 @@ void setup()
   myGLCD.InitLCD();
 
   myCAM.InitCAM();
-  myCAM.set_format(JPEG);
 
   //Initialize SD Card
   if (!SD.begin(SD_CS))
@@ -94,41 +96,10 @@ void setup()
 
 void loop()
 {
-  uint8_t temp,temp_last;
-  uint8_t start_capture = 0;
-  
-  temp = Serial.read();
-  start_capture = 1;
-  Serial.println("Start Capture"); 
-  myCAM.flush_fifo();
-  //start_capture = 1;
-  if(start_capture)
-  {
-    //Clear the capture done flag 
-    myCAM.clear_fifo_flag();	 
-    //Start capture
-    myCAM.start_capture();	 
-  }
-  if(myCAM.get_bit(ARDUCHIP_TRIG,CAP_DONE_MASK))
-  {
-    Serial.println("Capture Done!");
-
-    while( (temp != 0xD9) | (temp_last != 0xFF) )
-    {
-        temp_last = temp;
-	temp = myCAM.read_fifo();
-	Serial.write(temp);
-    }
-  
-
-    //Clear the capture done flag 
-    myCAM.clear_fifo_flag();
-    start_capture = 0;
-    while(1){};
-  /*
   char str[8];
+  unsigned long previous_time = 0;
   static int k = 0;
-  uint8_t temp;
+  uint8_t temp,temp_last;
   myCAM.set_mode(CAM2LCD_MODE);		 	//Switch to CAM
 
   while (1)
@@ -143,18 +114,31 @@ void loop()
     }
     else if (myCAM.get_bit(ARDUCHIP_TRIG, SHUTTER_MASK))
     {
-      k = k + 1;
-      itoa(k, str, 10);
-      strcat(str, ".bmp");				//Generate file name
-      myCAM.set_mode(MCU2LCD_MODE);    	//Switch to MCU, freeze the screen
-      GrabImage(str);
+      previous_time = millis();
+      while (myCAM.get_bit(ARDUCHIP_TRIG, SHUTTER_MASK))
+      {
+        if ((millis() - previous_time) > 1500)
+        {
+          Playback();
+        }
+      }
+      if ((millis() - previous_time) < 1500)
+      {
+        k = k + 1;
+        itoa(k, str, 10);
+        strcat(str, ".bmp");				//Generate file name
+        myCAM.set_mode(MCU2LCD_MODE);    	//Switch to MCU, freeze the screen
+        GrabImage(str);
+      }
     }
-  }
-    */
   }
 }
 
-/*
+void GrabNsendImage(char* str)
+{
+    
+}
+
 void GrabImage(char* str)
 {
   File outFile;
@@ -180,7 +164,9 @@ void GrabImage(char* str)
   Serial.println("Start Capture");
 
   //Polling the capture done flag
-  while (!myCAM.get_bit(ARDUCHIP_TRIG, CAP_DONE_MASK));
+  //while (!myCAM.get_bit(ARDUCHIP_TRIG, CAP_DONE_MASK));
+  while(!myCAM.get_bit(ARDUCHIP_TRIG, CAP_DONE_MASK));
+  
   Serial.println("Capture Done!");
 
   k = 0;
@@ -191,12 +177,16 @@ void GrabImage(char* str)
     buf[k++] = ch;
   }
   outFile.write(buf, k);
+  Serial.write(buf, k);
+  
   //Read the first dummy byte
   myCAM.read_fifo();
 
   k = 0;
   //Read 320x240x2 byte from FIFO
   //Save as RGB565 bmp format
+  
+  
   for (i = 0; i < 240; i++)
     for (j = 0; j < 320; j++)
     {
@@ -209,6 +199,7 @@ void GrabImage(char* str)
       {
         //Write 256 bytes image data to file from buffer
         outFile.write(buf, 256);
+        Serial.write(buf, 256);
         k = 0;
       }
     }
@@ -221,4 +212,46 @@ void GrabImage(char* str)
   myCAM.write_reg(ARDUCHIP_TIM, 0);
   return;
 }
-*/
+
+void Playback()
+{
+  File inFile;
+  char str[8];
+  int k = 0;
+  myCAM.set_mode(MCU2LCD_MODE);    		//Switch to MCU
+  myGLCD.InitLCD(PORTRAIT);
+
+  while (1)
+  {
+    k = k + 1;
+    itoa(k, str, 10);
+    strcat(str, ".bmp");
+    inFile = SD.open(str, FILE_READ);
+    if (! inFile)
+      return;
+    myGLCD.clrScr();
+    //myGLCD.resetXY();
+    dispBitmap(inFile);
+    inFile.close();
+    delay(2000);
+  }
+}
+
+//Only support RGB565 bmp format
+void dispBitmap(File inFile)
+{
+  char VH, VL;
+  int i, j = 0;
+  for (i = 0 ; i < BMPIMAGEOFFSET; i++)
+    inFile.read();
+  for (i = 0; i < 320; i++)
+    for (j = 0; j < 240; j++)
+    {
+      VL = inFile.read();
+      //Serial.write(VL);
+      VH = inFile.read();
+      //Serial.write(VH);
+      myGLCD.LCD_Write_DATA(VH, VL);
+    }
+  myGLCD.clrXY();
+}
